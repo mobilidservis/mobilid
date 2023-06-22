@@ -1,7 +1,7 @@
 <template>
     <div class=" fixed top-0 z-50 px-8 md:px-16 w-full h-28 flex justify-between items-center" :class="scroll<50 || `bg-white transition delay-150 duration-300 ease-in-out`" id="navbar" >
         <div id="logo">
-        <img src="@/assets/image/logo ok sm id.png" class=" w-[60px]" alt="" srcset="">
+        <img src="https://res.cloudinary.com/dwlgplrj9/image/upload/v1687463186/servicemobil/logo_ok_sm_id_ririyp.png" class=" w-[60px]" alt="" srcset="">
         </div>
         
         <div class=" md:flex items-center space-x-10 hidden">
