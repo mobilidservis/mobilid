@@ -16,9 +16,5 @@ const handleScroll = (event: any) => {
     scroll.value = scrollTop
 };
 
-if (process.client) {
-  window.addEventListener('scroll', handleScroll);
-} else {
-  window.addEventListener('scroll', handleScroll);
-}
+
 </script>
