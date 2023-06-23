@@ -18,5 +18,7 @@ const handleScroll = (event: any) => {
 
 if (process.client) {
   window.addEventListener('scroll', handleScroll);
+} else {
+  window.addEventListener('scroll', handleScroll);
 }
 </script>
