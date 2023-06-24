@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   typescript: {
     strict: true
   },
+  alias: {
+    assets: "/<rootDir>/assets",
+  },
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   postcss: {
