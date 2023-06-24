@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .title-underline {
   padding: 30px 0;
   position: relative;
@@ -20,4 +24,10 @@
   
   background: #CC0000;
   z-index: -1;
+}
+
+.parallelogram-bg{
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  background: #000;
+  
 }

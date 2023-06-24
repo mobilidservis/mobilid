@@ -1,5 +1,5 @@
 <template>
-  <div @scroll="handleScroll" class="relative overflow-scroll hsc">
+  <div @scroll="handleScroll" class="relative overflow-scroll">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
