@@ -4,3 +4,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.title-underline {
+  padding: 30px 0;
+  position: relative;
+}
+
+.title-underline::before {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 16px;
+  width: 150px;
+  height: 2px;
+  
+  background: #CC0000;
+  z-index: -1;
+}

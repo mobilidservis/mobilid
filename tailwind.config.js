@@ -11,10 +11,12 @@ module.exports = {
     extend: {
       colors: {
         'main-gold': '#D09F1F',
-        'main-red': '#CC0000'
+        'main-red': '#CC0000',
+        'grey-outline': '#DDDDDD',
+        'body-text': '#767676'
       },
       spacing: {
-       'md-screen': '60px'
+       'md-screen': '80px'
       },
     },
     fontFamily: {
