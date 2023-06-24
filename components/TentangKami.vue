@@ -1,6 +1,6 @@
 <template>
   <div id="tentangkami" class=" py-16">
-    <div class="md:px-md-screen px-8 mb-28">
+    <div class="md:px-md-screen px-8 md:mb-28">
       <div
         class="flex flex-col md:flex-row md:py-20 py-10 items-center space-y-5 md:space-x-6"
       >

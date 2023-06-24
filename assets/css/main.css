@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -21,13 +21,46 @@ html {
   bottom: 16px;
   width: 150px;
   height: 2px;
-  
-  background: #CC0000;
+
+  background: #cc0000;
   z-index: -1;
 }
 
-.parallelogram-bg{
+.title-underline-long {
+  padding: 30px 0;
+  position: relative;
+}
+
+.title-underline-long::before {
+  content: "";
+  position: absolute;
+  left: 37%;
+  bottom: 16px;
+  width: 150px;
+  height: 2px;
+
+  background: #cc0000;
+  z-index: -1;
+}
+
+.parallelogram-bg {
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   background: #000;
-  
+}
+
+.custom-shadow{
+  box-shadow: 5px 5px 50px 10px #CC00000A;
+}
+
+@media screen and (max-width: 480px) {
+  .parallelogram-bg {
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+  }
+
+  .title-underline-long::before {
+    left: 28%;
+  }
+  .title-underline::before {
+    left: 18%;
+  }
 }

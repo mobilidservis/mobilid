@@ -2,6 +2,7 @@
   <div ref="el" >
    <Banner/>
    <TentangKami/>
+   <CaraKerja/>
   </div>
 </template>
 

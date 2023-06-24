@@ -1,6 +1,6 @@
 <template>
-  <div class="parallelogram-bg md:px-md-screen px-8 md:py-[150px] w-full">
-    <div class="flex flex-col md:flex-row space-x-6 items-center">
+  <div class="parallelogram-bg md:px-md-screen px-8 py-[150px] w-full">
+    <div class="flex flex-col md:flex-row md:space-x-6 items-center">
       <div class="basis-1/2">
         <h2 class="font-bold text-xl text-main-red">Keunggulan Kami</h2>
         <h1 class="text-[32px] text-white my-4 font-bold">
@@ -12,10 +12,10 @@
         
       </div>
     </div>
-    <div class="flex flex-col md:flex-row space-x-6 items-center">
+    <div class="flex flex-col md:flex-row md:space-x-6 items-center space-y-4">
       <div class="basis-1/2">
        
-        <div class=" grid grid-cols-2 gap-y-6 mt-4">
+        <div class=" grid md:grid-cols-2 grid-cols-1 gap-y-6 mt-4">
         <KeunggulanKamiIcon v-for="i in iconHero" :props="i"/>
         </div>
       </div>

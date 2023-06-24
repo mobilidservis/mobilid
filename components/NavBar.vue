@@ -7,7 +7,7 @@
         <div class=" md:flex items-center space-x-10 hidden">
             <a class="font-epilogue" :class="scroll<50 ? `text-white`: `text-main-red transition delay-150 duration-300 ease-in-out`" href="#header">Home</a>
             <a class="font-epilogue" :class="scroll<50 ? `text-white`: `text-main-red transition delay-150 duration-300 ease-in-out`" href="#tentangkami">Tentang Kami</a>
-            <a class="font-epilogue" :class="scroll<50 ? `text-white`: `text-main-red transition delay-150 duration-300 ease-in-out`" href="#home">Cara Kerja Kami</a>
+            <a class="font-epilogue" :class="scroll<50 ? `text-white`: `text-main-red transition delay-150 duration-300 ease-in-out`" href="#carakerjakami">Cara Kerja Kami</a>
             <a class="font-epilogue" :class="scroll<50 ? `text-white`: `text-main-red transition delay-150 duration-300 ease-in-out`" href="#home">Keunggulan Kami</a>
             <a class="font-epilogue" :class="scroll<50 ? `text-white`: `text-main-red transition delay-150 duration-300 ease-in-out`" href="#home">Layanan Kami</a>
         </div>
