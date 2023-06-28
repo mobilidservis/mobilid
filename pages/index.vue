@@ -3,6 +3,8 @@
    <Banner/>
    <TentangKami/>
    <CaraKerja/>
+    <LayananKami/>
+   <Footer/>
   </div>
 </template>
 
