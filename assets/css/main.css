@@ -43,6 +43,23 @@ html {
   z-index: -1;
 }
 
+.title-underline-long2 {
+  padding: 30px 0;
+  position: relative;
+}
+
+.title-underline-long2::before {
+  content: "";
+  position: absolute;
+  left: 39%;
+  bottom: 16px;
+  width: 150px;
+  height: 2px;
+
+  background: #cc0000;
+  z-index: -1;
+}
+
 .parallelogram-bg {
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   background: #000;
@@ -58,8 +75,13 @@ html {
   }
 
   .title-underline-long::before {
-    left: 28%;
+    left: 25%;
   }
+
+  .title-underline-long2::before {
+    left: 18%;
+  }
+
   .title-underline::before {
     left: 18%;
   }

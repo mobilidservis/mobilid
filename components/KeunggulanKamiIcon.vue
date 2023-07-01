@@ -2,7 +2,7 @@
   <div class="flex flex-col md:items-start items-center">
     <img :src="props?.image" alt="" class=" w-[60px] aspect-square"/>
     <p class=" font-semibold text-center text-main-gold text-xl my-3">{{ props?.title }}</p>
-    <p class=" text-center text-white opacity-70">{{ props?.content }}</p>
+    <p class=" text-center md:text-start text-white opacity-70">{{ props?.content }}</p>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <hr />
-    <div class="flex flex-col md:flex-row md:space-x-8 md:space-y-0 space-y-4 p-md-screen">
+    <div class="flex flex-col md:flex-row md:space-x-8 md:space-y-0 space-y-4 p-8 md:p-md-screen">
       <div class="basis-5/12 flex flex-col">
         <div class="flex justify-between">
           <div class="basis-1/2">
@@ -51,11 +51,12 @@
       <div class="basis-5/12 flex flex-col">
         <div class="flex space-x-2">
           <img :src="locationIcon" alt="" srcset="" />
-          <a href=""
+          <a href="https://goo.gl/maps/4avJXk2qCU4YmqmX8"
             >Jl. Wr Supratman No.68 Kampung Utan. Ciputat Timur, Cempaka Putih,
             Kota Tangerang Selatan, Banten 15412</a
           >
         </div>
+        <a href="https://goo.gl/maps/4avJXk2qCU4YmqmX8">
         <div
           class="w-full rounded-md overflow-hidden h-48 mt-4 flex items-center justify-center"
         >
@@ -68,11 +69,12 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+    </a>
       </div>
     </div>
     <div class="h-10 bg-main-red w-full flex justify-center items-center">
       <p class="text-white text-sm font-medium">
-        Copyright &copy; 2023. PT Service Mobile ID.
+        Copyright &copy; 2023. PT SERVIS MOBIL INDONESIA
       </p>
     </div>
   </div>
