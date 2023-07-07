@@ -2,11 +2,11 @@
   <div class="flex flex-col" id="hubungikami">
     <hr />
     <div
-      class="flex flex-col md:flex-row md:space-x-8 md:space-y-0 space-y-4 p-8 md:p-md-screen"
+      class="flex flex-col lg:flex-row lg:space-x-8 lg:space-y-0 space-y-4 p-8 md:p-md-screen"
     >
       <div class="basis-5/12 flex flex-col">
         <div class="flex justify-between">
-          <div class="basis-1/2">
+          <div class="basis-8/12">
             <img
               src="https://res.cloudinary.com/dwlgplrj9/image/upload/v1687463186/servicemobil/logo_ok_sm_id_ririyp.png"
               class="w-[40px]"
@@ -14,7 +14,7 @@
               srcset=""
             />
           </div>
-          <div class="w-full flex justify-between basis-1/2">
+          <div class="w-full flex justify-between basis-4/12">
             <a href="#">
               <img :src="fbIcon" class="w-8" alt="" />
             </a>

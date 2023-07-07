@@ -8,7 +8,7 @@
           <div class="lg:w-[580px] w-full aspect-square relative">
             <div class="rounded-md overflow-hidden w-full h-full">
               <img
-                src="https://res.cloudinary.com/dwlgplrj9/image/upload/v1687457860/servicemobil/image_8_krqb3h.png"
+                :src="tentangKamiImg"
                 class="w-full h-full object-cover"
                 alt=""
                 srcset=""
@@ -30,16 +30,7 @@
               <TagStar v-for="i in data.tag" :tag="i" />
             </div>
             <p class="text-body-text text-justify lg:text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. <br />
-              <br />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco
+              Jangan tunggu kendaraan anda memberi tanda, tapi cek lah secara berkala, kendaraan anda sehat anda pun senang, servicemobil.id siap memberikan pelayanan terbaik untuk anda.
             </p>
           </div>
         </div>
@@ -64,6 +55,8 @@
 </template>
 
 <script setup lang="ts">
+import tentangKamiImg from "/image/Picsart_23-07-03_20-13-37-718.jpg";
+
 const data = reactive({
   tag: ["Berkualitas", "Berkomitmen", "Sigap"],
   promo: [

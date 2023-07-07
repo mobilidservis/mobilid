@@ -8,14 +8,14 @@
         </h1>
       </div>
       <div class="basis-1/2">
-        <p class=" text-white opacity-70">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class=" text-white opacity-70">Mekanik kami adalah mekanik senior yang sudah bekerja di bengkel resmi selama lebih dari 5 tahun dan memiliki analisa yang baik untuk semua jenis tipe kendaraan. Kami memiliki garansi setelah servis dan part selama 14 hari kerja. Untuk servis bisa di kerjakan di workshop mitra kami atau kunjungan langsung ke lokasi customer (home service).</p>
         
       </div>
     </div>
     <div class="flex flex-col lg:flex-row lg:space-x-6 items-center space-y-4">
       <div class="basis-1/2">
        
-        <div class=" grid md:grid-cols-2 grid-cols-1 gap-y-6 mt-4">
+        <div class=" grid md:grid-cols-2 grid-cols-1 gap-y-6 mt-4 gap-5">
         <KeunggulanKamiIcon v-for="i in iconHero" :props="i"/>
         </div>
       </div>
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import masBengkel from "@/assets/image/image 9.png";
+import masBengkel from "/image/Picsart_23-07-03_20-16-52-834.jpg";
 
 const iconHero = [
   {
