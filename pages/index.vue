@@ -1,5 +1,5 @@
 <template>
-  <div ref="el" >
+  <div ref="el" class="w-full max-w-screen-2xl mx-auto relative">
    <Banner/>
    <TentangKami/>
    <CaraKerja/>

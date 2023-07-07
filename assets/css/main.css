@@ -86,3 +86,22 @@ html {
     left: 18%;
   }
 }
+
+.container-iframe {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 28%; /* 16:9 Aspect Ratio */
+  border-radius: 5px
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

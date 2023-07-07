@@ -1,7 +1,9 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col" id="hubungikami">
     <hr />
-    <div class="flex flex-col md:flex-row md:space-x-8 md:space-y-0 space-y-4 p-8 md:p-md-screen">
+    <div
+      class="flex flex-col md:flex-row md:space-x-8 md:space-y-0 space-y-4 p-8 md:p-md-screen"
+    >
       <div class="basis-5/12 flex flex-col">
         <div class="flex justify-between">
           <div class="basis-1/2">
@@ -44,32 +46,30 @@
 
       <div class="basis-2/12 flex flex-col space-y-3 w-full">
         <p class="mb-2">Legal</p>
-            <a class="text-main-red" href="#">Tentang Kami</a>
-            <a class="text-main-red" href="#">Kebijakan Privasi</a>
-            <a class="text-main-red" href="#">Syarat dan Ketentuan</a>
+        <a class="text-main-red" href="#">Tentang Kami</a>
+        <a class="text-main-red" href="#">Kebijakan Privasi</a>
+        <a class="text-main-red" href="#">Syarat dan Ketentuan</a>
       </div>
       <div class="basis-5/12 flex flex-col">
         <div class="flex space-x-2">
           <img :src="locationIcon" alt="" srcset="" />
-          <a href="https://goo.gl/maps/4avJXk2qCU4YmqmX8"
-            >Jl. Wr Supratman No.68 Kampung Utan. Ciputat Timur, Cempaka Putih,
-            Kota Tangerang Selatan, Banten 15412</a
+          <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7"
+            >Jl. Ciledug Raya no 22 RT 010 RW 04 Ulujami, Pesanggrahan, Kota
+            Jakarta Selatan</a
           >
         </div>
-        <a href="https://goo.gl/maps/4avJXk2qCU4YmqmX8">
-        <div
-          class="w-full rounded-md overflow-hidden h-48 mt-4 flex items-center justify-center"
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1844.6007509374624!2d106.74619669006525!3d-6.2951292043841525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f158e4ec7de5%3A0x95cdb39ab8120225!2sBengkel%20Online%20-%20Supercar.id!5e0!3m2!1sid!2sid!4v1687956589565!5m2!1sid!2sid"
-            width="600"
-            height="450"
-            style="border: 0"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-    </a>
+        <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7">
+          <div class="container-iframe mt-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.209232018893!2d106.76570907483605!3d-6.236128661067781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f0df1a492aa3%3A0x3f10f05a0f3f6746!2sJl.%20Ciledug%20Raya%20No.19%2C%20RT.13%2FRW.5%2C%20Cipulir%2C%20Kec.%20Kby.%20Lama%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012230!5e0!3m2!1sen!2sid!4v1688736026658!5m2!1sen!2sid"
+              class="responsive-iframe"
+              style="border: 0"
+              
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </a>
       </div>
     </div>
     <div class="h-10 bg-main-red w-full flex justify-center items-center">
