@@ -1,21 +1,21 @@
+import { getStorage } from 'firebase/storage';
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-//your firebase configuration goes here
-//https://firebase.google.com/docs/web/learn-more?authuser=0&hl=en#modular-version
-
-
+// Your web app's Firebase configuration
 const firebaseConfig = {
-apiKey: "AIzaSyDSFntKVnOhjHzB3tuW5zGy2PgRV9LptBI",
-authDomain: "yuks-a5d95.firebaseapp.com",
-projectId: "yuks-a5d95",
-storageBucket: "yuks-a5d95.appspot.com",
-messagingSenderId: "154450100574",
-appId: "1:154450100574:web:bddca05911299fefc84fcf",
-measurementId: "G-N536YMZNNZ"
+  apiKey: "AIzaSyC1lhZE0ZKYz384oo2IM3_k4Uwd9Tx9Hts",
+  authDomain: "servicemobil-3f4ca.firebaseapp.com",
+  projectId: "servicemobil-3f4ca",
+  storageBucket: "servicemobil-3f4ca.appspot.com",
+  messagingSenderId: "686492425494",
+  appId: "1:686492425494:web:718996ffb89a344438c437"
 };
 
+// Initialize Firebase
 export const firebaseApp = initializeApp(firebaseConfig);
 
 export const firestoreDb = getFirestore(firebaseApp);
