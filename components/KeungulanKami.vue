@@ -1,5 +1,5 @@
 <template>
-  <div class="parallelogram-bg lg:px-md-screen px-8 py-[150px] w-full">
+  <div class="parallelogram-bg lg:px-md-screen px-8 py-[150px] w-full" id="keunggulankami">
     <div class="flex flex-col lg:flex-row lg:space-x-6 items-center">
       <div class="basis-1/2">
         <h2 class="font-bold text-xl text-main-red">Keunggulan Kami</h2>

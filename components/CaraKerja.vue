@@ -1,5 +1,5 @@
 <template>
-  <div id="carakerjakami" class="py-16">
+  <div id="carakerjakami" class="py-28">
     <div class="lg:px-md-screen px-8 mb-28">
       <div class="flex justify-center mb-20">
         <h1

@@ -23,13 +23,19 @@
 
       <button
         class="mt-6 px-4 py-2 bg-main-red rounded-lg text-white font-semibold text-center"
-      >
+      @click="toggleBooking">
         Booking Service Sekarang
       </button>
     </div>
   </div>
 </div>
+<BookingForm :modal="bookingModal" @on-close="toggleBooking"/>
 </template>
 
 <script setup lang="ts">
+  let bookingModal = ref(false)
+
+  const toggleBooking = () => {
+    bookingModal.value = !bookingModal.value
+  }
 </script>
