@@ -58,22 +58,9 @@
       <div class="flex flex-col mt-10">
         <p class="text-xl font-bold">Informasi Mobil Anda</p>
         <div class="grid lg:grid-cols-3 grid-cols-1 mt-4 gap-6">
-          <input
-            v-model="data.booking.brand"
-            type="text"
-            name="name"
-            placeholder="Brand"
-            id="name"
-            class="rounded-lg border px-3 py-4 focus:outline focus:outline-main-red"
-          />
-          <input
-            v-model="data.booking.model"
-            type="text"
-            name="email"
-            placeholder="Model"
-            id="email"
-            class="rounded-lg border px-3 py-4 focus:outline focus:outline-main-red"
-          />
+        <AutoComplete :placeholder="'Brand'" :options="data.brands" v-model="data.brand"/>
+        <AutoComplete :placeholder="'Model'" :options="data.models" v-model="data.model"/>
+
           <input
           v-model="data.booking.year"
             type="number"
@@ -108,10 +95,12 @@
 </template>
 
 <script setup lang="ts">
-import { doc, setDoc } from 'firebase/firestore';
+import { collection, doc, getDocs, query, setDoc } from 'firebase/firestore';
 import { Booking } from '~/model/Booking';
+import { Brand } from '~/model/Brand';
+import { Model } from '~/model/Model';
 
-  defineProps({
+defineProps({
   modal: {
     type: Boolean,
   },
@@ -121,11 +110,49 @@ const emit = defineEmits(['on-close'])
 
 interface Data {
   booking: Booking;
+  brands: Brand[]
+  brand: Brand
+  models: Model[]
+  model: Model
 }
 
 const data: Data = reactive({
   booking: {} as Booking,
+  brands: [],
+  brand: {} as Brand,
+  models: [],
+  model: {} as Model
 });
+
+watch(
+  () => data.brand,
+  (a) => {
+    getModels(a.name)
+  }
+)
+
+onMounted(() => {
+  getBrands();
+});
+
+
+const getBrands = async () => {
+  const refs = collection(firestoreDb, "brand");
+  const q = query(refs);
+  getDocs(q).then((a) => {
+    a.forEach((b) => {
+      data.brands.push(b.data() as Brand)});
+  });
+};
+
+const getModels = async (id:string) => {
+  const refs = collection(firestoreDb, "model");
+  const q = query(refs);
+  getDocs(q).then((a) => {
+    a.forEach((b) => {
+      data.models.push(b.data() as Model)});
+  });
+};
 
 
 const addData = async () => {
@@ -136,8 +163,8 @@ const addData = async () => {
   "email": data.booking.email,
   "phone": data.booking.phone,
   "address": data.booking.address,
-  "brand": data.booking.brand,
-  "model": data.booking.model,
+  "brand": data.brand.name,
+  "model": data.model.name,
   "year": data.booking.year,
   "problem": data.booking.problem,
 })

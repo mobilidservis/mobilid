@@ -1,19 +1,20 @@
 <template>
 <div class="">
     <Combobox v-model="selected">
-    <div class="relative mt-1">
+    <div class="relative">
         <div
-        class="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus:outline-main-red focus:outline focus-visible:ring-2 border py-2"
+        class="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left"
         >
         <ComboboxInput
-            class="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-            :displayValue="(person) => person.name"
+            class="w-full rounded-lg border px-3 py-4 focus:outline focus:outline-main-red uppercase"
+            :displayValue="(option) => option.name"
             @change="query = $event.target.value"
+            :placeholder="placeholder"
         />
         <ComboboxButton
-            class="absolute inset-y-0 right-0 flex items-center pr-2"
+            class="absolute inset-y-0 right-0 flex items-center pr-6"
         >
-           
+           <img :src="dropDownIcon" alt="">
         </ComboboxButton>
         </div>
         <TransitionRoot
@@ -23,34 +24,34 @@
         @after-leave="query = ''"
         >
         <ComboboxOptions
-            class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+            class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-40"
         >
             <div
-            v-if="filteredPeople.length === 0 && query !== ''"
+            v-if="filtered.length === 0 && query !== ''"
             class="relative cursor-default select-none py-2 px-4 text-gray-700"
             >
-            Nothing found.
+            {{placeholder}} tidak ditemukan
             </div>
 
             <ComboboxOption
-            v-for="person in filteredPeople"
+            v-for="option in filtered"
             as="template"
-            :key="person.id"
-            :value="person"
+            :key="option.id"
+            :value="option"
             v-slot="{ selected, active }"
             >
             <li
                 class="relative cursor-default select-none py-2 pl-10 pr-4"
                 :class="{
-                'bg-teal-600 text-white': active,
+                ' bg-main-red text-white': active,
                 'text-gray-900': !active,
                 }"
             >
                 <span
-                class="block truncate"
+                class="block truncate uppercase"
                 :class="{ 'font-medium': selected, 'font-normal': !selected }"
                 >
-                {{ person.name }}
+                {{ option.name }}
                 </span>
                 <span
                 v-if="selected"
@@ -79,23 +80,34 @@ ComboboxOption,
 TransitionRoot,
 } from '@headlessui/vue'
 
-const people = [
-{ id: 1, name: 'Wade Cooper' },
-{ id: 2, name: 'Arlene Mccoy' },
-{ id: 3, name: 'Devon Webb' },
-{ id: 4, name: 'Tom Cook' },
-{ id: 5, name: 'Tanya Fox' },
-{ id: 6, name: 'Hellen Schmidt' },
-]
+import dropDownIcon from "/image/Vector 6.svg";
 
-let selected = ref(people[0])
+const props = defineProps({
+  options: {
+    type: Array,
+    default: []
+  },
+  placeholder: {
+    type: String
+  },
+  modelValue: {
+    type: Object
+  }
+});
+
+const emit = defineEmits(['update:modelValue'])
+
+let selected = ref('')
 let query = ref('')
 
-let filteredPeople = computed(() =>
+watch(selected, (option) => emit('update:modelValue', option), { immediate: true })
+
+
+let filtered = computed(() =>
 query.value === ''
-    ? people
-    : people.filter((person) =>
-        person.name
+    ? props.options
+    : props.options.filter((option) =>
+        option.name
         .toLowerCase()
         .replace(/\s+/g, '')
         .includes(query.value.toLowerCase().replace(/\s+/g, ''))
