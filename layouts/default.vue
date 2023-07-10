@@ -1,7 +1,6 @@
 <template>
   <div class="DefaultLayout">
-  
-    <NavBar/>
+    jadbjfb
     <slot />
   </div>
 </template>
