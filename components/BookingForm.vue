@@ -95,7 +95,7 @@
 </template>
 
 <script setup lang="ts">
-import { collection, doc, getDocs, query, setDoc } from 'firebase/firestore';
+import { collection, doc, getDocs, query, setDoc, where } from 'firebase/firestore';
 import { Booking } from '~/model/Booking';
 import { Brand } from '~/model/Brand';
 import { Model } from '~/model/Model';
@@ -127,7 +127,7 @@ const data: Data = reactive({
 watch(
   () => data.brand,
   (a) => {
-    getModels(a.name)
+    getModels(a.id)
   }
 )
 
@@ -147,11 +147,17 @@ const getBrands = async () => {
 
 const getModels = async (id:string) => {
   const refs = collection(firestoreDb, "model");
-  const q = query(refs);
+  const q = query(refs, where("brand", "==", doc(firestoreDb, "brand", String(id))));
   getDocs(q).then((a) => {
-    a.forEach((b) => {
-      data.models.push(b.data() as Model)});
+    console.log(a.docs);
+    
+    const temp = [] as any
+    a.docs.forEach((b) => temp.push({id: b.data().id, name: b.data().name})
+    );
+    data.models = temp
   });
+  console.log(data.models);
+  
 };
 
 
@@ -159,6 +165,7 @@ const addData = async () => {
   try {
     let id = generateId()
     await setDoc(doc(firestoreDb, "booking", id), {
+      id,
   "name": data.booking.name,
   "email": data.booking.email,
   "phone": data.booking.phone,
