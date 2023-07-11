@@ -4,7 +4,7 @@
     <div
       class="flex flex-col lg:flex-row lg:space-x-8 lg:space-y-0 space-y-4 p-8 md:p-md-screen"
     >
-      <div class="basis-5/12 flex flex-col">
+      <div class="basis-5/12 flex flex-col order-1 lg:order-1">
         <div class="flex justify-between">
           <div class="basis-8/12">
             <img
@@ -44,13 +44,13 @@
         </div>
       </div>
 
-      <div class="basis-2/12 flex flex-col space-y-3 w-full">
-        <p class="mb-2">Legal</p>
-        <a class="text-main-red" href="#">Tentang Kami</a>
-        <a class="text-main-red" href="#">Kebijakan Privasi</a>
-        <a class="text-main-red" href="#">Syarat dan Ketentuan</a>
+      <div class="basis-2/12 flex flex-col space-y-3 w-full order-3 lg:order-2">
+        <p class=" text-center md:text-start mb-2">Legal</p>
+        <a class=" text-center md:text-start text-main-red" href="#">Tentang Kami</a>
+        <a class=" text-center md:text-start text-main-red" href="#">Kebijakan Privasi</a>
+        <a class=" text-center md:text-start text-main-red" href="#">Syarat dan Ketentuan</a>
       </div>
-      <div class="basis-5/12 flex flex-col">
+      <div class="basis-5/12 flex flex-col order-2 lg:order-3">
         <div class="flex space-x-2">
           <img :src="locationIcon" alt="" srcset="" />
           <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7"

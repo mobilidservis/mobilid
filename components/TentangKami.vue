@@ -21,8 +21,8 @@
         </div>
         <div class="basis-1/2">
           <div class="flex flex-col">
-            <h2 class="font-bold text-xl text-main-red md:mt-5">Tentang Kami</h2>
-            <h1 class="text-[32px] font-bold">
+            <h2 class="font-bold text-sm lg:text-xl text-main-red md:mt-5">Tentang Kami</h2>
+            <h1 class="lg:text-[32px] text-xl font-bold">
               Kami Menawarkan
               <span class="text-main-gold">Perawatan Otomatif Terbaik</span>
             </h1>
@@ -41,7 +41,7 @@
           <h1
             class="text-center font-bold text-3xl lg:text-[40px] title-underline"
           >
-            Promo Bulan Ini
+          Paket service
           </h1>
         </div>
 

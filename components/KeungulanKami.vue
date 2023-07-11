@@ -1,5 +1,5 @@
 <template>
-  <div class="parallelogram-bg lg:px-md-screen px-8 py-[150px] w-full" id="keunggulankami">
+  <div class="parallelogram-bg lg:px-md-screen px-8 py-[150px] w-full flex flex-col" id="keunggulankami">
     <div class="flex flex-col lg:flex-row lg:space-x-6 items-center">
       <div class="basis-1/2">
         <h2 class="font-bold text-xl text-main-red">Keunggulan Kami</h2>
@@ -13,14 +13,14 @@
       </div>
     </div>
     <div class="flex flex-col lg:flex-row lg:space-x-6 items-center space-y-4">
-      <div class="basis-1/2">
+      <div class="basis-1/2 order-2 lg:order-1">
        
         <div class=" grid md:grid-cols-2 grid-cols-1 gap-y-6 mt-4 gap-5">
         <KeunggulanKamiIcon v-for="i in iconHero" :props="i"/>
         </div>
       </div>
-      <div class="basis-1/2">
-        <div class="lg:w-[580px] w-full aspect-square relative">
+      <div class="basis-1/2 order-1 lg:order-2">
+        <div class="lg:w-[580px] w-full aspect-square relative mb-5">
             <div class="rounded-md overflow-hidden w-full h-full">
               <img
                 :src="masBengkel"

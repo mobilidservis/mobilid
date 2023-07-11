@@ -44,16 +44,11 @@
 
 <script setup lang="ts">
 import { onStartTyping } from "@vueuse/core";
-import {
-  resetPassword,
-  loginWithGoogle,
-  onLogoutAction,
-} from "~/composables/authority";
 
 definePageMeta({
   layout: false,
-  middleware: "auth",
 });
+
 const email = ref<HTMLInputElement | null>(null);
 
 const data = reactive({
@@ -67,12 +62,17 @@ onStartTyping(() => {
   }
 });
 
-const signIn = () => {
+const router = useRouter();
+
+
+const signIn = async () => {
   try {
-    signInUser(data.email, data.password);
+   await signInUser(data.email, data.password)
   } catch (error: any) {
     console.log(error);
   }
+  
+  router.push({path: '/admin'})
 };
 
 const resetPass = () => {

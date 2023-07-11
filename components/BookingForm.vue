@@ -4,9 +4,11 @@
     v-if="modal"
   >
     <div
-      class="bg-white w-full rounded-lg h-full drop-shadow-2xl p-10 flex flex-col overflow-scroll"
+      class=" w-[80%]  h-[90%]  relative"
     >
-      <div>
+    <img @click="$emit('on-close')" class=" h-6 absolute -top-3 -right-3 cursor-pointer z-20" src="/image/close.svg" alt="">
+      <div class=" w-full h-full overflow-scroll drop-shadow-2xl p-10 flex flex-col bg-white rounded-lg">
+        <div >
         <h1 class="text-3xl text-main-red font-bold text-center">
           Booking Service
         </h1>
@@ -36,10 +38,11 @@
           />
           <input
           v-model="data.booking.phone"
-            type="number"
+          type="number"
             name="phone"
-            placeholder="Nomor Telfon"
+            placeholder="Nomor Telepon"
             id="phone"
+            
             class="rounded-lg border px-3 py-4 focus:outline focus:outline-main-red"
           />
         </div>
@@ -89,7 +92,7 @@
         >
           Booking Sekarang
         </button>
-      </div>
+      </div></div>
     </div>
   </div>
 </template>
@@ -99,6 +102,7 @@ import { collection, doc, getDocs, query, setDoc, where } from 'firebase/firesto
 import { Booking } from '~/model/Booking';
 import { Brand } from '~/model/Brand';
 import { Model } from '~/model/Model';
+
 
 defineProps({
   modal: {
@@ -149,15 +153,11 @@ const getModels = async (id:string) => {
   const refs = collection(firestoreDb, "model");
   const q = query(refs, where("brand", "==", doc(firestoreDb, "brand", String(id))));
   getDocs(q).then((a) => {
-    console.log(a.docs);
-    
     const temp = [] as any
     a.docs.forEach((b) => temp.push({id: b.data().id, name: b.data().name})
     );
     data.models = temp
-  });
-  console.log(data.models);
-  
+  });  
 };
 
 
@@ -168,7 +168,7 @@ const addData = async () => {
       id,
   "name": data.booking.name,
   "email": data.booking.email,
-  "phone": data.booking.phone,
+  "phone": 0 + data.booking.phone,
   "address": data.booking.address,
   "brand": data.brand.name,
   "model": data.model.name,

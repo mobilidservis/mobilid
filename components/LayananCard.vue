@@ -17,6 +17,7 @@
         <p class="opacity-70 md:text-sm">{{ props?.content }}</p>
       </div>
     </div>
+    
   </div>
 </template>
 

@@ -3,6 +3,7 @@
    <Banner/>
    <TentangKami/>
    <CaraKerja/>
+   <!-- <PaketCard/> -->
     <LayananKami/>
    <Footer/>
   </div>

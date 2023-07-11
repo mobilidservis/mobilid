@@ -18,7 +18,7 @@ export const signInUser = async (email: string, password: string) => {
     .then((credentials) => {
       const user = credentials.user;
       storeDataUser(user);
-      
+      isLogin.value = true
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -48,7 +48,7 @@ export const loginWithGoogle = async () => {
 export const onLogoutAction = () => {
   signOut(getAuth()).then(() => {
       isLogin.value = false
-      console.log(isLogin);
-      
+      userLogin.value = {}
+      location.reload();
   })
 }

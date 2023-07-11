@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    '@vueuse/nuxt',
+    '@vueuse/nuxt','nuxt-icon'
   ],
   runtimeConfig: {
     // The private keys which are only available server-side
