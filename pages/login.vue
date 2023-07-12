@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex justify-center py-28">
-    <div
+    <div v-if="!data.reset"
       class="w-full px-10 md:px-0 md:w-80 flex flex-col space-y-6 justify-center"
     >
       <p class="font-semibold text-center">
@@ -39,11 +39,15 @@
         Reset Password
       </p>
     </div>
+    <div v-else>
+      Permintaan reset password telah dikirim, cek pada email {{ data.email }}
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { onStartTyping } from "@vueuse/core";
+import { setInterval } from "timers";
 
 definePageMeta({
   layout: false,
@@ -54,6 +58,7 @@ const email = ref<HTMLInputElement | null>(null);
 const data = reactive({
   email: "",
   password: "",
+  reset: false
 });
 
 onStartTyping(() => {
@@ -77,9 +82,15 @@ const signIn = async () => {
 
 const resetPass = () => {
   try {
+    data.reset = true
     resetPassword(data.email);
+
+    
   } catch (error) {
     console.log(error);
   }
+  setTimeout(() => {
+    data.reset = false
+    }, 5000);
 };
 </script>
