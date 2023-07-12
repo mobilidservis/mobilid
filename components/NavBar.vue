@@ -2,7 +2,7 @@
     <div class=" fixed top-0 z-50 px-8 md:px-16 w-full h-28 flex flex-wrap justify-between items-center" :class="scroll<50 || `bg-white transition delay-150 duration-300 ease-in-out`" id="navbar" >
         <div id="logo">
        <a href="/">
-        <img src="/image/logo ok sm id.png" class=" w-[60px]" alt="" srcset="">
+        <img src="/image/logo.png" class=" w-[60px]" alt="" srcset="">
        </a>
         </div>
         

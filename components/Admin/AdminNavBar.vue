@@ -9,7 +9,7 @@
             </svg>
          </button>
         <a href="/admin" class="flex ml-2 md:mr-24">
-          <img src="/image/logo ok sm id.png" class="h-8 mr-3" alt="FlowBite Logo" />
+          <img src="/image/logo.png" class="h-8 mr-3" alt="FlowBite Logo" />
         </a>
       </div>
       <div class="flex items-center">
