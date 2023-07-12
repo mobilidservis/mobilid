@@ -90,7 +90,8 @@
           class="bg-main-red px-8 py-2 rounded-lg text-white"
           @click="addData"
         >
-          Booking Sekarang
+        <Spinner :loading="data.loading" label="Booking Sekarang"/>
+          
         </button>
       </div></div>
     </div>
@@ -118,6 +119,7 @@ interface Data {
   brand: Brand
   models: Model[]
   model: Model
+  loading: boolean
 }
 
 const data: Data = reactive({
@@ -125,7 +127,8 @@ const data: Data = reactive({
   brands: [],
   brand: {} as Brand,
   models: [],
-  model: {} as Model
+  model: {} as Model,
+  loading: false
 });
 
 watch(
@@ -163,6 +166,7 @@ const getModels = async (id:string) => {
 
 const addData = async () => {
   try {
+    data.loading = true
     let id = generateId()
     await setDoc(doc(firestoreDb, "booking", id), {
       id,
@@ -175,9 +179,11 @@ const addData = async () => {
   "year": data.booking.year,
   "problem": data.booking.problem,
 })
+data.loading = false
 
 emit('on-close')
   } catch (error) {
+data.loading = false
     console.log(error);
     
   }

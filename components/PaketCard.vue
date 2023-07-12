@@ -1,43 +1,59 @@
 <template>
 <swiper
-    :slidesPerView="'auto'"
+    :slidesPerView="1"
     :spaceBetween="30"
     :pagination="{
     clickable: true,
     }"
-    :modules="modules"
+    :autoplay="{
+      delay: 5000,
+      disableOnInteraction: false,
+    }"
+    :modules="[Pagination, Autoplay]"
     class="mySwiper"
+    :breakpoints=" {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }"
+    
 >
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
-    <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
+    <swiper-slide v-for="a in img">
+    <div class=" pb-14">
+        <img class="" :src="a" alt="" srcset="">
+    </div>
+    </swiper-slide>
+    
 </swiper>
 </template>
-<script>
+<script setup>
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide, } from 'swiper/vue';
 
 // Import Swiper styles
 import 'swiper/css';
 
 import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
+
 
 // import './style.css';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
-export default {
-    components: {
-    Swiper,
-    SwiperSlide,
-    },
-    setup() {
-    return {
-        modules: [Pagination],
-    };
-    },
-};
+defineProps({
+  img: {
+    type: Array,
+  },
+});
 </script>

@@ -6,7 +6,7 @@
     >
       <div class="basis-5/12 flex flex-col order-1 lg:order-1">
         <div class="flex justify-between">
-          <div class="basis-8/12">
+          <div class="basis-6/12 lg:basis-8/12">
             <img
               src="https://res.cloudinary.com/dwlgplrj9/image/upload/v1687463186/servicemobil/logo_ok_sm_id_ririyp.png"
               class="w-[40px]"
@@ -14,17 +14,17 @@
               srcset=""
             />
           </div>
-          <div class="w-full flex justify-between basis-4/12">
-            <a href="#">
+          <div class="w-full flex justify-between basis-6/12 lg:basis-4/12">
+            <a href="https://www.facebook.com/servicemobil.id1?mibextid=ZbWKwL">
               <img :src="fbIcon" class="w-8" alt="" />
             </a>
-            <a href="#">
+            <a href="https://wa.me/+6285817853206">
               <img :src="waIcon" class="w-8" alt="" />
             </a>
-            <a href="#">
+            <a href="https://instagram.com/servicemobilid?igshid=MzNlNGNkZWQ4Mg==">
               <img :src="igIcon" class="w-8" alt="" />
             </a>
-            <a href="#">
+            <a href="https://twitter.com/Servicemobilid?t=QfLLPgnJ0hUZ4n7Ody0jFw&s=09">
               <img :src="twtIcon" class="w-8" alt="" />
             </a>
           </div>
@@ -37,9 +37,10 @@
             type="text"
             class="w-full px-4 py-2 h-14 border-2 rounded-s-lg focus:border-none focus:outline focus:outline-main-red"
             placeholder="Masukkan Email Kamu"
+            v-model="data.email"
           />
-          <button class="bg-main-red text-white rounded-r-lg p-4">
-            Berlangganan
+          <button class="bg-main-red text-white rounded-r-lg p-4" @click="subscribe">
+            <Spinner :loading="data.loading" label="Berlangganan"/>
           </button>
         </div>
       </div>
@@ -86,4 +87,24 @@ import waIcon from "/image/Group 5.svg";
 import igIcon from "/image/Group 4.svg";
 import twtIcon from "/image/Group 2.svg";
 import locationIcon from "/image/Group 13.svg";
+import { doc, setDoc } from "firebase/firestore";
+
+const data = reactive({email: '', loading: false})
+
+const subscribe = async () => {
+  try {
+    data.loading = true
+    let id = generateId();
+    await setDoc(doc(firestoreDb, "subscriber", id), {
+      id,
+      email: data.email,
+    });
+    data.email = ''
+    data.loading = false
+  } catch (error) {
+    data.loading = false
+    console.log(error);
+  }
+}
+
 </script>

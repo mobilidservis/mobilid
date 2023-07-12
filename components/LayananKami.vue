@@ -56,9 +56,10 @@ const data = reactive({
   brands: {
     firstRow: ["/image/toyota-logos-brands-logotypes-0.png"],
     secondRow: ["/image/daihatsu-vector-logo-idngrafis.png", "/image/nissan-2020-new-logo.jpg"],
-    thirdRow: ["/image/Chevrolet-logo.png", "/image/Suzuki.png"],
+    thirdRow: ["/image/Chevrolet-logo.png", "/image/Suzuki.png", "/image/Mitsubishi_logo.svg.png"],
     fourthRow: ["/image/Honda-Emblem.png", "/image/Mazda-logo-1997-1920x1080.png"],
     fifthRow: ["/image/Ford-Motor-Company-Logo.png"],
   },
 });
+
 </script>

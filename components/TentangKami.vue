@@ -22,7 +22,7 @@
         <div class="basis-1/2">
           <div class="flex flex-col">
             <h2 class="font-bold text-sm lg:text-xl text-main-red md:mt-5">Tentang Kami</h2>
-            <h1 class="lg:text-[32px] text-xl font-bold">
+            <h1 class="lg:text-[32px] text-xl font-bold lg:leading-10">
               Kami Menawarkan
               <span class="text-main-gold">Perawatan Otomatif Terbaik</span>
             </h1>
@@ -45,8 +45,8 @@
           </h1>
         </div>
 
-        <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
-          <PromoBanner v-for="i in data.promo" :promo="i" />
+        <div class="">
+          <PaketCard :img="data.paket"/>
         </div>
       </div>
     </div>
@@ -59,17 +59,6 @@ import tentangKamiImg from "/image/Picsart_23-07-03_20-13-37-718.jpg";
 
 const data = reactive({
   tag: ["Berkualitas", "Berkomitmen", "Sigap"],
-  promo: [
-    {
-      image: "/image/image 13.png",
-      persentage: 50,
-      title: "PROMO BULAN JUNI",
-    },
-    {
-      image: "/image/image 14.png",
-      persentage: 50,
-      title: "PROMO BULAN JUNI",
-    },
-  ],
+  paket: ["/paket/WhatsApp Image 2023-07-08 at 20.11.58.jpeg", "/paket/WhatsApp Image 2023-07-08 at 20.12.00.jpeg",  "/paket/WhatsApp Image 2023-07-08 at 20.12.01.jpeg", "/paket/WhatsApp Image 2023-07-08 at 20.12.01 (1).jpeg", "/paket/WhatsApp Image 2023-07-08 at 20.12.02 (1).jpeg", "/paket/WhatsApp Image 2023-07-08 at 20.12.02.jpeg", "/paket/WhatsApp Image 2023-07-11 at 09.28.52.jpeg"]
 });
 </script>
