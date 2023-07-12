@@ -5,7 +5,9 @@ export interface Booking {
   phone: string;
   address: string;
   brand: number;
+  createdAt: Date;
   model: number;
   year: string[];
   problem: string;
+  status: string
 }

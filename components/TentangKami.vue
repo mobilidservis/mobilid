@@ -41,12 +41,12 @@
           <h1
             class="text-center font-bold text-3xl lg:text-[40px] title-underline"
           >
-          Paket service
+          Paket Service
           </h1>
         </div>
 
         <div class="">
-          <PaketCard :img="data.paket"/>
+          <PaketCard :img="data.packages"/>
         </div>
       </div>
     </div>
@@ -55,10 +55,33 @@
 </template>
 
 <script setup lang="ts">
+import { Package } from "~/model/Package";
 import tentangKamiImg from "/image/Picsart_23-07-03_20-13-37-718.jpg";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 
-const data = reactive({
+
+interface Data {
+  packages: Package[];
+  tag: string[]
+}
+
+const data: Data = reactive({
   tag: ["Berkualitas", "Berkomitmen", "Sigap"],
-  paket: ["/paket/WhatsApp Image 2023-07-08 at 20.11.58.jpeg", "/paket/WhatsApp Image 2023-07-08 at 20.12.00.jpeg",  "/paket/WhatsApp Image 2023-07-08 at 20.12.01.jpeg", "/paket/WhatsApp Image 2023-07-08 at 20.12.01 (1).jpeg", "/paket/WhatsApp Image 2023-07-08 at 20.12.02 (1).jpeg", "/paket/WhatsApp Image 2023-07-08 at 20.12.02.jpeg", "/paket/WhatsApp Image 2023-07-11 at 09.28.52.jpeg"]
+  packages: [],
 });
+
+onMounted(() => {
+  getPackages();
+});
+
+const getPackages = async () => {
+  data.packages = []
+  const refs = collection(firestoreDb, "package");
+  const q = query(refs, orderBy("order", "asc"));
+  getDocs(q).then((a) => {
+    a.forEach((b) => {
+      data.packages.push(b.data() as Package);
+    });
+  });
+};
 </script>

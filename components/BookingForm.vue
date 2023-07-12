@@ -17,7 +17,7 @@
         </p>
       </div>
 
-      <div class="flex flex-col mt-10">
+      <div class="flex flex-col mt-6">
         <p class="text-xl font-bold">Informasi Anda</p>
         <div class="grid lg:grid-cols-3 grid-cols-1 mt-4 gap-6">
           <input
@@ -52,13 +52,13 @@
             name="address"
             id="address"
             cols="30"
-            rows="3"
+            rows="1"
             placeholder="Alamat Anda"
             class="rounded-lg border px-3 py-4 focus:outline focus:outline-main-red"
           ></textarea>
         </div>
       </div>
-      <div class="flex flex-col mt-10">
+      <div class="flex flex-col mt-6">
         <p class="text-xl font-bold">Informasi Mobil Anda</p>
         <div class="grid lg:grid-cols-3 grid-cols-1 mt-4 gap-6">
         <AutoComplete :placeholder="'Brand'" :options="data.brands" v-model="data.brand"/>
@@ -79,7 +79,7 @@
             name="address"
             id="address"
             cols="30"
-            rows="3"
+            rows="1"
             placeholder="Masalah Mobil"
             class="rounded-lg border px-3 py-4 focus:outline focus:outline-main-red"
           ></textarea>
@@ -87,7 +87,7 @@
       </div>
       <div class="flex justify-center mt-10">
         <button
-          class="bg-main-red px-8 py-2 rounded-lg text-white"
+          class="bg-main-red px-8 py-2 rounded-lg text-white flex items-center"
           @click="addData"
         >
         <Spinner :loading="data.loading" label="Booking Sekarang"/>
@@ -172,12 +172,14 @@ const addData = async () => {
       id,
   "name": data.booking.name,
   "email": data.booking.email,
-  "phone": 0 + data.booking.phone,
+  "phone": "0" + data.booking.phone,
   "address": data.booking.address,
   "brand": data.brand.name,
+  "createdAt": Date.now(),
   "model": data.model.name,
   "year": data.booking.year,
   "problem": data.booking.problem,
+  "status": "baru"
 })
 data.loading = false
 

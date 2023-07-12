@@ -9,7 +9,7 @@
   <AdminSideBar/>
 </aside>
 
-<div class="sm:ml-64 p-md-screen">
+<div class="sm:ml-64 px-4 py-14 lg:p-md-screen">
  <div class=" py-10">
   <slot /></div>
 </div>

@@ -18,7 +18,7 @@
       Simpan
     </button>
     <button class="border border-gray-800 w-40 px-4 py-2 rounded-lg text-gray-800" @click="$router.go(-1)">
-      Cancel
+      Kembali
     </button></div>
   </div>
 </template>

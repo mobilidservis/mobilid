@@ -29,7 +29,7 @@
 >
     <swiper-slide v-for="a in img">
     <div class=" pb-14">
-        <img class="" :src="a" alt="" srcset="">
+        <img class="" :src="a.photo_url" alt="" srcset="">
     </div>
     </swiper-slide>
     

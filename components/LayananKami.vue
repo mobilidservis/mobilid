@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col md:flex-row">
+  <div class="flex flex-col md:flex-row" id="layanankami">
     <LayananCard v-for="i in data.layanan" :props="i" />
   </div>
   <div class="p-md-screen">

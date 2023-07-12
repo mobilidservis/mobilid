@@ -1,18 +1,19 @@
 <template>
   <div >
     <div class="relative overflow-x-auto sm:rounded-lg">
+      
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead
           class="text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400"
         >
           <tr>
-            <th scope="col" class="px-6 py-3">No.</th>
+            <th scope="col" class="px-6 py-3">Tanggal</th>
             <th scope="col" class="px-6 py-3">Nama</th>
             <th scope="col" class="px-6 py-3">Telepon</th>
             <th scope="col" class="px-6 py-3">Alamat</th>
             <th scope="col" class="px-6 py-3">Mobil</th>
-            <th scope="col" class="px-6 py-3">Tahun</th>
             <th scope="col" class="px-6 py-3">Masalah</th>
+            <th scope="col" class="px-6 py-3">Status</th>
             <th scope="col" class="px-6 py-3">Action</th>
           </tr>
         </thead>
@@ -25,7 +26,7 @@
               scope="row"
               class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
             >
-              {{ i + 1 }}
+              {{ new Date(item.createdAt).getDate() }}/{{ new Date(item.createdAt).getMonth() }}/{{ new Date(item.createdAt).getFullYear() }}
             </th>
             <th
               scope="row"
@@ -40,20 +41,20 @@
               {{ item.address }}
             </td>
             <td class="px-6 py-4 uppercase">
-              {{ item.brand }} - {{ item.model }}
+              {{ item.brand }} - {{ item.model }} - {{ item.year }}
             </td>
-            <td class="px-6 py-4 uppercase">
-              {{ item.year }}
-            </td>
-            <td class="px-6 py-4">
+            <td class="px-6 py-4 ">
               {{ item.problem }}
             </td>
             <td class="px-6 py-4">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >Detail</a
-              >
+              <span class="border text-sm font-medium mr-2 px-2.5 py-0.5 rounded" :class="statusChip(item.status).class">{{ statusChip(item.status).label }}</span>
+            </td>
+            <td class="px-6 py-4">
+              <NuxtLink :to="`/admin/booking/${item.id}`">
+                <div class=" w-10 aspect-square p-1 border border-blue-500 rounded-lg flex items-center justify-center">
+                  <Icon  name="ic:outline-edit" color="blue" />
+                  </div>
+              </NuxtLink>
             </td>
           </tr>
         </tbody>

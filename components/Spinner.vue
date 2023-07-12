@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div role="status" v-if="loading">
+    <div role="status" v-if="loading" class=" flex justify-center">
       <svg
         aria-hidden="true"
         class="w-6 h-6 mr-2 text-gray-200 animate-spin fill-white"

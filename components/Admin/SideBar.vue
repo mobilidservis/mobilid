@@ -21,6 +21,7 @@
 const sidebar = [
   { title: "Dashboard", to: "/admin", icon: "ic:outline-dashboard-customize" },
   { title: "Brand", to: "/admin/brand", icon: "ic:outline-local-taxi" },
-  
+  { title: "Paket Service", to: "/admin/package", icon: "ic:outline-shopping-cart-checkout" },
+  { title: "Pelanggan", to: "/admin/subscriber", icon: "fluent:person-feedback-16-filled" },
 ];
 </script>
