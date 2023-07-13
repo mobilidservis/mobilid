@@ -2,7 +2,7 @@
   <div class="flex flex-col md:flex-row" id="layanankami">
     <LayananCard v-for="i in data.layanan" :props="i" />
   </div>
-  <div class="p-md-screen">
+  <div class="lg:p-md-screen p-10">
     <div class="flex justify-center mb-10">
       <h1
         class="text-center font-bold text-3xl lg:text-[40px] title-underline-long2"
@@ -11,7 +11,7 @@
       </h1>
     </div>
 
-    <div class="flex flex-col lg:flex-row items-center lg:justify-between space-y-4 lg:space-y-0 lg:space-x-6">
+    <div class="hidden lg:flex flex-col lg:flex-row items-center lg:justify-between space-y-4 lg:space-y-0 lg:space-x-6">
       <div class=" lg:basis-3/12 flex flex-col w-full space-y-4">
         <BrandIcon v-for="i in data.brands.firstRow" :icon="i" />
       </div>
@@ -26,6 +26,11 @@
       </div>
       <div class=" lg:basis-3/12 flex flex-col w-full space-y-4">
         <BrandIcon v-for="i in data.brands.fifthRow" :icon="i" />
+      </div>
+    </div>
+    <div class="lg:hidden">
+      <div class=" grid grid-cols-3 gap-3 w-full">
+        <BrandIcon  v-for="i in [...data.brands.firstRow, ...data.brands.secondRow, ...data.brands.thirdRow, ...data.brands.fourthRow, ...data.brands.fifthRow]"  :icon="i" />
       </div>
     </div>
   </div>
