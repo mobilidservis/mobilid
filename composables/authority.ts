@@ -24,6 +24,8 @@ export const signInUser = async (email: string, password: string) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorMessage, errorCode);
+    window.alert("Username atau password salah");
+
     });
   return credentials;
 };

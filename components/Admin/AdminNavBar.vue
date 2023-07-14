@@ -13,7 +13,7 @@
         </a>
       </div>
       <div class="flex items-center">
-        <button class=" border border-blue-500 px-4 py-2 text-white rounded-lg" @click="onLogoutAction">Sign Out</button>
+        <button class=" border border-blue-500 px-4 py-2 text-white rounded-lg" @click="onLogoutAction">Keluar</button>
         </div>
     </div>
   </div>

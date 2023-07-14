@@ -29,6 +29,7 @@
             <a class="font-epilogue text-end text-main-red" @click="openModal" href="#keunggulankami">Keunggulan Kami</a>
             <a class="font-epilogue text-end text-main-red" @click="openModal" href="#carakerjakami">Cara Kerja Kami</a>
             <a class="font-epilogue text-end text-main-red" @click="openModal" href="#layanankami">Layanan Kami</a>
+            <a class="font-epilogue text-end text-main-red" @click="openModal" href="#hubungikami">Hubungi Kami</a>
         </div>
 </template>
 

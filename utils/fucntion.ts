@@ -16,3 +16,5 @@ export function statusChip(status: string): { class: string; label: string } {
         return { class: "chipNew", label: "BARU" };
     }
   }
+
+  

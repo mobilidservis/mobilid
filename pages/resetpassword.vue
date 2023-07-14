@@ -1,15 +1,14 @@
 <template>
   <div class="w-full flex justify-center py-28">
-    <div
+    <form
+      @submit="resetPass()"
+      v-if="!data.reset"
       class="w-full px-10 md:px-0 md:w-80 flex flex-col space-y-6 justify-center"
     >
-      <p class="font-semibold text-center">
-        Masuk <span class="font-bold">ServiceMobil.id</span>
-      </p>
 
       <div class="w-full flex flex-col space-y-4">
         <input
-          
+          required
           ref="email"
           type="email"
           name="email"
@@ -17,29 +16,22 @@
           placeholder="Email"
           v-model="data.email"
         />
-
-        <input
-          ref="password"
-          type="password"
-          name="password"
-          class="py-2 px-4 rounded-xl font-semibold border-main-red border-2"
-          placeholder="Password"
-          v-model="data.password"
-        />
       </div>
       <button
-        @click="signIn()"
+        type="submit"
         class="py-2 px-4 rounded-xl font-semibold bg-main-red text-white hover:bg-main-gold flex justify-center"
       >
-        Sign In
-      </button>
-      <NuxtLink to="/resetpassword">
-        <p class="text-main-red hover:text-main-gold text-center cursor-pointer">
         Reset Password
+      </button>
+      <NuxtLink to="/login">
+        <p class="text-main-red hover:text-main-gold text-center cursor-pointer">
+        Kembali login
       </p>
       </NuxtLink>
+    </form>
+    <div v-else>
+      Permintaan reset password telah dikirim, cek pada email {{ data.email }}
     </div>
-   
   </div>
 </template>
 
@@ -66,12 +58,16 @@ onStartTyping(() => {
 
 const router = useRouter();
 
-const signIn = async () => {
+
+const resetPass = () => {
   try {
-    await signInUser(data.email, data.password);
-  router.push({ path: "/admin" });
-  } catch (error: any) {
+    data.reset = true;
+    resetPassword(data.email);
+  } catch (error) {
     console.log(error);
   }
+  setTimeout(() => {
+    router.push({ path: "/login" });
+  }, 5000);
 };
 </script>

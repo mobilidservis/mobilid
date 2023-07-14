@@ -6,7 +6,7 @@
     >
       <div class="basis-5/12 flex flex-col order-1 lg:order-1">
         <div class="flex justify-between">
-          <div class="basis-6/12 lg:basis-8/12">
+          <div class="basis-5/12 lg:basis-7/12">
             <img
               src="https://res.cloudinary.com/dwlgplrj9/image/upload/v1687463186/servicemobil/logo_ok_sm_id_ririyp.png"
               class="w-[40px]"
@@ -14,17 +14,21 @@
               srcset=""
             />
           </div>
-          <div class="w-full flex justify-between basis-6/12 lg:basis-4/12">
-            <a href="https://www.facebook.com/servicemobil.id1?mibextid=ZbWKwL">
+          <div class="w-full flex justify-between basis-7/12 lg:basis-5/12">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100094504038278&mibextid=ZbWKwL">
               <img :src="fbIcon" class="w-8" alt="" />
             </a>
-            <a href="https://wa.me/+6285817853206">
+            <a target="_blank" href="https://wa.me/+6285817853206">
               <img :src="waIcon" class="w-8" alt="" />
             </a>
-            <a href="https://instagram.com/servicemobilid?igshid=MzNlNGNkZWQ4Mg==">
+            <a target="_blank" href="https://instagram.com/servicemobilid?igshid=MzNlNGNkZWQ4Mg==">
               <img :src="igIcon" class="w-8" alt="" />
             </a>
-            <a href="https://twitter.com/Servicemobilid?t=QfLLPgnJ0hUZ4n7Ody0jFw&s=09">
+            <a target="_blank" href="https://vt.tiktok.com/ZSLf1A1qf/">
+              <img :src="tiktok" class="w-8" alt="" />
+            </a>
+            
+            <a target="_blank" href="https://twitter.com/Servicemobilid?t=QfLLPgnJ0hUZ4n7Ody0jFw&s=09">
               <img :src="twtIcon" class="w-8" alt="" />
             </a>
           </div>
@@ -86,6 +90,7 @@ import fbIcon from "/image/Group 3.svg";
 import waIcon from "/image/Group 5.svg";
 import igIcon from "/image/Group 4.svg";
 import twtIcon from "/image/Group 2.svg";
+import tiktok from "/image/Group 6.svg";
 import locationIcon from "/image/Group 13.svg";
 import { doc, setDoc } from "firebase/firestore";
 
