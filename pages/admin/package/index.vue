@@ -8,7 +8,7 @@
     <div class=" w-full grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-5 gap-y-5">
       <div v-for="item in data.packages" class=" w-full border border-gray-800 rounded-lg overflow-hidden flex flex-col justify-center">
         <img :src="item.photo_url" alt="" srcset="">
-        <input v-model="item.order" placeholder="order" type="text" class=" text-center m-2  rounded-lg border px-3 py-4 focus:outline focus:outline-main-red" id="">
+        <input v-model="item.order" placeholder="order" type="text" class=" text-center m-2  rounded-lg border px-3 py-4 focus:outline focus:outline-gray-700" id="">
         <div class=" flex space-x-3 p-2">
       <button class="bg-gray-800 w-40 px-4 py-2 rounded-lg text-white" @click="editData(item.id, item)">
       <Spinner :loading="data.loading" label="Simpan"/>

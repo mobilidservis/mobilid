@@ -7,7 +7,7 @@
           @change="getImage"
           type="file"
           placeholder="Foto"
-          class="rounded-lg border px-3 py-4 focus:outline focus:outline-main-red"
+          class="rounded-lg border px-3 py-4 focus:outline focus:outline-gray-700"
         />
         <input
           v-model="data.package.order"
@@ -15,7 +15,7 @@
           min="1"
           name="name"
           placeholder="Order"
-          class="rounded-lg border px-3 py-4 focus:outline focus:outline-main-red"
+          class="rounded-lg border px-3 py-4 focus:outline focus:outline-gray-700"
         />
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex justify-center py-28">
     <form
-      @submit="resetPass()"
+      @submit.prevent="resetPass()"
       v-if="!data.reset"
       class="w-full px-10 md:px-0 md:w-80 flex flex-col space-y-6 justify-center"
     >

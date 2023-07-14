@@ -9,7 +9,7 @@
           name="name"
           placeholder="Nama Brand"
           id="name"
-          class="rounded-lg border px-3 py-4 focus:outline focus:outline-main-red"
+          class="rounded-lg border px-3 py-4 focus:outline focus:outline-gray-700"
         />
       </div>
     </div>

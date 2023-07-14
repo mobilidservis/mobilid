@@ -2,67 +2,10 @@
   <div>
     <div class="mb-4 w-full flex justify-between">
       <div>
-        <button
-          @click="toggleFilter"
-          id="dropdownActionButton"
-          data-dropdown-toggle="dropdownAction"
-          class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-          type="button"
-        >
-          Filter
-          <svg
-            class="w-2.5 h-2.5 ml-2.5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 1 4 4 4-4"
-            />
-          </svg>
-        </button>
-        <!-- Dropdown menu -->
-        <div
-          id="dropdownAction"
-          :class="data.filterModal ? 'absolute' : 'hidden'"
-          class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-        >
-          <ul
-            class="py-1 text-sm text-gray-700 dark:text-gray-200"
-            aria-labelledby="dropdownActionButton"
-          >
-            <li>
-              <a
-                @click="getBooking()"
-                class="block cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >Terbaru</a
-              >
-            </li>
-            <li>
-              <a
-                class="block cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >Terlam</a
-              >
-            </li>
-            <li>
-              <a
-                class="block cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >Activate account</a
-              >
-            </li>
-          </ul>
-          <div class="py-1">
-            <a
-              class="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >Delete User</a
-            >
-          </div>
-        </div>
+      
+       <input type="text" v-model="search" placeholder="Cari data"
+         
+          class="rounded-lg border px-3 py-4 focus:outline focus:outline-gray-700">
       </div>
       <button
         class="bg-gray-800 w-40 px-4 py-2 rounded-lg text-white"
@@ -77,7 +20,7 @@
           class="text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400"
         >
           <tr>
-            <th scope="col" class="px-6 py-3">Tanggal</th>
+            <th scope="col" class="px-6 py-3 cursor-pointer flex items-center" @click="getBooking(!data.sort)">Tanggal  <Icon   name="uil:sort" size="14px" color="gray" /></th>
             <th scope="col" class="px-6 py-3">Nama</th>
             <th scope="col" class="px-6 py-3">Telepon</th>
             <th scope="col" class="px-6 py-3">Alamat</th>
@@ -90,7 +33,7 @@
         <tbody>
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-            v-for="(item, i) in data.bookings"
+            v-for="(item, i) in data.showData"
           >
             <th
               scope="row"
@@ -137,8 +80,24 @@
           </tr>
         </tbody>
       </table>
-     
+    
     </div>
+    <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
+        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span class="font-semibold text-gray-900">{{data.startData}}-{{ data.endData }}</span> of <span class="font-semibold text-gray-900">{{ data.dataTable.length }}</span></span>
+        <ul class="inline-flex -space-x-px text-sm h-8">
+            <li>
+                <a @click="data.pageActive == 1 ? data.pageActive = 1 : data.pageActive--, pageData()"  class="flex cursor-pointer items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+            </li>
+            <span v-for="i in data.maxPage">
+              <li>
+                <a @click="data.pageActive = i, pageData()" class="flex cursor-pointer items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ i }}</a>
+            </li>
+            </span>
+            <li>
+                <a @click="data.pageActive == data.maxPage ? data.pageActive = data.maxPage : data.pageActive++, pageData()" class="flex cursor-pointer items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+            </li>
+        </ul>
+    </nav>
   </div>
 </template>
 
@@ -151,22 +110,94 @@ interface Data {
   bookings: Booking[];
   showData: Booking[];
   filterModal: boolean;
+  pageActive: number
+  maxPage: number
+  showPerPage: number
+  startData: number
+  endData: number
+  showPerPageOptions: number[],
+  sort: boolean
+  arrayTmp: Booking[]
+  dataTable: Booking[]
+  search: string
 }
 
 const data: Data = reactive({
   bookings: [],
   showData: [],
+  arrayTmp: [],
+  dataTable: [],
   filterModal: false,
+  pageActive: 1,
+  maxPage: 10,
+  showPerPage: 5,
+  startData: 0,
+  endData: 0,
+  showPerPageOptions: [5, 10, 20],
+  sort: true,
+  search: ''
 });
 
+const search = ref('')
 
 onMounted(async () => {
-  getBooking();
+   getBooking(true);
 });
+
+watch(search, (newSearch) => {
+  searchAction()
+})
+
+const pageData = () => {
+  
+  data.showData = []
+  data.dataTable = search.value == '' ?  data.bookings : data.arrayTmp
+  let page = ((data.pageActive - 1) * data.showPerPage)
+  if (data.pageActive * data.showPerPage > data.dataTable.length) {
+    data.startData = page + 1
+    data.endData = data.dataTable.length
+    for (let i = page; i < data.dataTable.length; i++) {
+      const el = data.dataTable[i];
+     data.showData.push(el)
+    }
+  } else{
+    data.startData = page + 1
+    data.endData = data.showPerPage * data.pageActive
+    for (let i = page; i < data.showPerPage * data.pageActive; i++) {
+      const el = data.dataTable[i];
+      
+     data.showData.push(el)
+    }
+  }
+
+ data.maxPage = Math.ceil(data.dataTable.length / data.showPerPage)
+ data.showPerPageOptions.push
+}
+
+const searchAction = () => {
+  
+      data.arrayTmp = []
+      for (let index = 0; index < data.bookings.length; index++) {
+        const element = data.bookings[index]
+        let tmp = Object.values(element)
+        let tmpValue = ""
+        for (let i = 0; i < tmp.length; i++) {
+          const el = tmp[i]
+          tmpValue = tmpValue + el + " "
+        }
+        if (tmpValue.toLowerCase().includes(search.value.toLowerCase())) {
+          data.arrayTmp.push(element)
+          // this.items.filter((a,b) => b == index)
+        }
+      }
+     pageData()
+    }
 
 const toggleFilter = () => {
   data.filterModal = !data.filterModal;
 };
+
+
 
 const exportFile = () => {
   const excelData = [];
@@ -201,13 +232,18 @@ const exportFile = () => {
   );
 };
 
-const getBooking = async () => {
+const getBooking = (sort: boolean) => {
+  data.sort = sort
+  data.bookings = []
   const refs = collection(firestoreDb, "booking");
-  const q = query(refs, orderBy("createdAt", "asc"));
+  const q = sort ? query(refs, orderBy("createdAt", "desc")) : query(refs, orderBy("createdAt", "asc"));
+  
   getDocs(q).then((a) => {
     a.forEach((b) => {
       data.bookings.push(b.data() as Booking);
     });
-  });
+   
+  }).finally(() => pageData());
+  
 };
 </script>

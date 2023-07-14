@@ -3,7 +3,7 @@
     class="w-screen h-screen flex items-center justify-center z-50 fixed top-0 right-0 p-10"
     v-if="modal"
   >
-    <form @submit="addData" class="w-[80%] h-[90%] relative">
+    <form @submit.prevent="addData()" class="w-[80%] h-[90%] relative">
       <img
         @click="$emit('on-close')"
         class="h-6 absolute -top-3 -right-3 cursor-pointer z-20"
