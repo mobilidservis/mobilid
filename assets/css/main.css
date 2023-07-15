@@ -154,13 +154,13 @@ html {
 }
 
 .chipNew{
-  @apply bg-gray-700 text-green-300 border-green-400
+  @apply  bg-transparent dark:bg-gray-700 text-green-300 border-green-400
 }
 
 .chipProses{
-  @apply bg-gray-700 text-yellow-300 border-yellow-300
+  @apply bg-transparent dark:bg-gray-700 text-yellow-300 border-yellow-300
 }
 
 .chipDone{
-  @apply bg-gray-700 text-gray-400 border-gray-500
+  @apply bg-transparent dark:bg-gray-700 text-gray-400 border-gray-500
 }

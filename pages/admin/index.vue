@@ -41,7 +41,7 @@
             >
               {{ new Date(item.createdAt).getDate() }}/{{
                 new Date(item.createdAt).getMonth()
-              }}/{{ new Date(item.createdAt).getFullYear() }}
+              }}/{{ new Date(item.createdAt).getFullYear() + "-" + new Date(item.createdAt).getHours() + ":"+  new Date(item.createdAt).getMinutes() }}
             </th>
             <th
               scope="row"
