@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-4 w-full flex justify-between">
+    <div class="mb-4 w-full flex justify-between space-x-2">
       <div>
       
        <input type="text" v-model="search" placeholder="Cari data"
@@ -8,7 +8,7 @@
           class="rounded-lg border px-3 py-4 focus:outline focus:outline-gray-700">
       </div>
       <button
-        class="bg-gray-800 w-40 px-4 py-2 rounded-lg text-white"
+        class="bg-gray-800 w-40 px-4 py-2 rounded-lg text-white text-sm md:text-base"
         @click="exportFile"
       >
         Download Data
