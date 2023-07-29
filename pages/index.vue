@@ -13,4 +13,11 @@ definePageMeta({
   layout: "custom",
 });
 
+useSeoMeta({
+  title: 'Servicemobil.id',
+  ogTitle: 'Service Mobil Indonesia',
+  description: 'Selamat datang di servicemobil.id, layanan mobil terbaik, termurah, dan terpercaya di Indonesia, dengan fokus pelayanan di Jakarta dan Yogyakarta. Kami berkomitmen untuk memberikan pengalaman yang luar biasa kepada pelanggan kami dalam hal perawatan dan perbaikan mobil. Dengan tim mekanik berpengalaman dan terlatih, kami menawarkan solusi lengkap untuk semua kebutuhan kendaraan Anda.',
+  ogDescription: 'Selamat datang di servicemobil.id, layanan mobil terbaik, termurah, dan terpercaya di Indonesia, dengan fokus pelayanan di Jakarta dan Yogyakarta. Kami berkomitmen untuk memberikan pengalaman yang luar biasa kepada pelanggan kami dalam hal perawatan dan perbaikan mobil. Dengan tim mekanik berpengalaman dan terlatih, kami menawarkan solusi lengkap untuk semua kebutuhan kendaraan Anda.',
+})
+
 </script>
