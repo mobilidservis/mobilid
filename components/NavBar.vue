@@ -20,7 +20,8 @@
         <a href="#hubungikami" class=" border-2 rounded-lg px-4 py-2 font-semibold font-epilogue text-center" :class="scroll<50 ? `text-white  border-white`: `text-main-red border-main-red transition delay-150 duration-300 ease-in-out`">Hubungi Kami</a>
         </div>
         <div class="lg:hidden flex">
-            <Icon @click="openModal" name="basil:menu-outline" :color="scroll>50 || data.modal ? '#CC0000' : '#FFF'" />
+        <img @click="openModal" src="/image/MenuAlt3Outline (1).svg" alt="" srcset=""  :stroke="scroll>50 || data.modal ? '#CC0000' : '#FFF'">
+           
         </div>
     </div>
     <div :class="data.modal ? 'flex fixed top-0 z-30' : 'hidden'" class="flex-col space-y-3 w-full lg:hidden bg-white pt-24 pb-5 px-8">
