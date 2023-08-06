@@ -22,9 +22,9 @@ useSeoMeta({
 
 useHead({
   title: 'Servicemobil.id',
-  meta: [
-    { name:"google-site-verification", content:"O_kzaKX7eAXQ7qeMX3y8Pu_Bk5MwIBHQDUjmaeLnCZI" }
-  ],
+  // meta: [
+  //   { name:"google-site-verification", content:"O_kzaKX7eAXQ7qeMX3y8Pu_Bk5MwIBHQDUjmaeLnCZI" }
+  // ],
 })
 
 </script>
