@@ -193,10 +193,10 @@ const updateData = async (status: string) => {
   }
   
   try {
-    setDoc(doc(firestoreDb, "booking", String(route.params.id)), data.booking, {
+    await setDoc(doc(firestoreDb, "booking", String(route.params.id)), data.booking, {
       merge: true,
     });
-    getBooking();
+    await getBooking();
     data.loading = false;
   } catch (error) {
     data.loading = false;
