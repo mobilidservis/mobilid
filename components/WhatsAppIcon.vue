@@ -1,7 +1,7 @@
 <template>
     <div>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<div class="floating_btn">
+<div class="floating_btn w-20 md:w-24 aspect-square right-5 bottom-5 md:right-7 md:bottom-7">
     <a target="_blank" href="https://wa.me/+6285817853206">
       <div class="contact_icon">
         <i class="fa fa-whatsapp my-float"></i>
@@ -19,10 +19,7 @@ a{
 }
 .floating_btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 100px;
-  height: 100px;
+  
   display: flex;
   flex-direction: column;
   align-items:center;
