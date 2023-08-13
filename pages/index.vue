@@ -5,6 +5,7 @@
    <CaraKerja/>
     <LayananKami/>
    <Footer/>
+   <WhatsAppIcon/>
   </div>
 </template>
 
