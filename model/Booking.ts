@@ -10,4 +10,12 @@ export interface Booking {
   year: string[];
   problem: string;
   status: string
+  paymentStatus?: string
+  totalPayment?: string 
+  proccessUpdateBy?: string
+  proccessUpdateAt?: number
+  finishUpdateBy?: string
+  finishUpdateAt?: number
+  paymentUpdateBy?: string
+  paymentUpdateAt?: number
 }

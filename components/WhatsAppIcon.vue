@@ -1,29 +1,32 @@
 <template>
-    <div>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<div class="floating_btn w-20 md:w-24 aspect-square right-5 bottom-5 md:right-7 md:bottom-7">
-    <a target="_blank" href="https://wa.me/+6285817853206">
-      <div class="contact_icon">
+  <div>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+    <div
+      class="floating_btn w-28 md:w-36 aspect-square right-5 bottom-2 md:right-10 md:bottom-5 drop-shadow-lg"
+    >
+      <a target="_blank" href="https://wa.me/+6285817853206">
+        <img src="/Daco_5201641.png" alt="" srcset="" />
+        <!-- <div class="contact_icon">
         <i class="fa fa-whatsapp my-float"></i>
-      </div>
-    </a>
-  </div>
+      </div> -->
+      </a>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped>
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
 }
 .floating_btn {
   position: fixed;
-  
+
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
 }
 
@@ -38,7 +41,7 @@ a{
   color: #fff;
   width: 60px;
   height: 60px;
-  font-size:30px;
+  font-size: 30px;
   border-radius: 50px;
   text-align: center;
   box-shadow: 2px 2px 3px #999;
@@ -57,5 +60,4 @@ a{
   text-decoration: none !important;
   transition: all 300ms ease-in-out;
 }
-
 </style>
