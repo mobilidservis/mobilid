@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import masBengkel from "/image/Picsart_23-07-03_20-16-52-834.jpg";
+import masBengkel from "/image/Picsart_23-07-03_20-16-52-834.webp";
 
 const iconHero = [
   {

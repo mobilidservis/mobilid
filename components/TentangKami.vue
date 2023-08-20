@@ -56,7 +56,7 @@
 
 <script setup lang="ts">
 import { Package } from "~/model/Package";
-import tentangKamiImg from "/image/Picsart_23-07-03_20-13-37-718.jpg";
+import tentangKamiImg from "/image/Picsart_23-07-03_20-13-37-718.webp";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 
 
