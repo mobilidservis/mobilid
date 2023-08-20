@@ -4,7 +4,7 @@
     <div
       class="floating_btn w-28 md:w-36 aspect-square right-5 bottom-2 md:right-10 md:bottom-5 drop-shadow-lg"
     >
-      <a target="_blank" href="https://wa.me/+6285817853206">
+      <a alt="whatsapp" target="_blank" href="https://wa.me/+6285817853206">
         <img src="/Daco_5201641.png" alt="" srcset="" />
         <!-- <div class="contact_icon">
         <i class="fa fa-whatsapp my-float"></i>

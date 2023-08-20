@@ -1,8 +1,8 @@
 <template>
     <div class=" fixed top-0 z-50 px-8 md:px-16 w-full lg:h-28 h-20 flex flex-wrap justify-between items-center" :class="scroll<50 || `bg-white transition delay-150 duration-300 ease-in-out`" id="navbar" >
         <div id="logo">
-       <a href="/">
-        <img src="/image/logo.png" class=" lg:w-[60px] w-[40px]" alt="" srcset="">
+       <a href="/" alt="servicemobil.id">
+        <img src="/image/logo.webp" class=" lg:w-[60px] w-[40px]" alt="" srcset="">
        </a>
         </div>
         

@@ -8,27 +8,27 @@
         <div class="flex justify-between">
           <div class="basis-5/12 lg:basis-7/12">
             <img
-              src="https://res.cloudinary.com/dwlgplrj9/image/upload/v1687463186/servicemobil/logo_ok_sm_id_ririyp.png"
+              src="/image/logo.webp"
               class="w-[40px]"
               alt=""
               srcset=""
             />
           </div>
           <div class="w-full flex justify-between basis-7/12 lg:basis-5/12">
-            <a target="_blank" href="https://www.facebook.com/profile.php?id=100094504038278&mibextid=ZbWKwL">
+            <a alt="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100094504038278&mibextid=ZbWKwL">
               <img :src="fbIcon" class="w-8" alt="" />
             </a>
-            <a target="_blank" href="https://wa.me/+6285817853206">
+            <a  alt="whatsapp" target="_blank" href="https://wa.me/+6285817853206">
               <img :src="waIcon" class="w-8" alt="" />
             </a>
-            <a target="_blank" href="https://instagram.com/servicemobilid?igshid=MzNlNGNkZWQ4Mg==">
+            <a alt="instagram" target="_blank" href="https://instagram.com/servicemobilid?igshid=MzNlNGNkZWQ4Mg==">
               <img :src="igIcon" class="w-8" alt="" />
             </a>
-            <a target="_blank" href="https://vt.tiktok.com/ZSLf1A1qf/">
+            <a alt="tiktok" target="_blank" href="https://vt.tiktok.com/ZSLf1A1qf/">
               <img :src="tiktok" class="w-8" alt="" />
             </a>
             
-            <a target="_blank" href="https://twitter.com/Servicemobilid?t=QfLLPgnJ0hUZ4n7Ody0jFw&s=09">
+            <a alt="twitter" target="_blank" href="https://twitter.com/Servicemobilid?t=QfLLPgnJ0hUZ4n7Ody0jFw&s=09">
               <img :src="twtIcon" class="w-8" alt="" />
             </a>
           </div>
@@ -58,12 +58,12 @@
       <div class="basis-5/12 flex flex-col order-2 lg:order-3">
         <div class="flex space-x-2">
           <img :src="locationIcon" alt="" srcset="" />
-          <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7"
+          <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7" alt="alamat servicemobil.id"
             >Jl. Ciledug Raya no 22 RT 010 RW 04 Ulujami, Pesanggrahan, Kota
             Jakarta Selatan</a
           >
         </div>
-        <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7">
+        <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7" alt="alamat servicemobil.id">
           <div class="container-iframe mt-4">
             <iframe
             title="alamat service mobil"
