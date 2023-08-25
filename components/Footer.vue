@@ -58,12 +58,11 @@
       <div class="basis-5/12 flex flex-col order-2 lg:order-3">
         <div class="flex space-x-2">
           <img :src="locationIcon" alt="" srcset="" />
-          <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7" alt="alamat servicemobil.id"
-            >Jl. Ciledug Raya no 22 RT 010 RW 04 Ulujami, Pesanggrahan, Kota
-            Jakarta Selatan</a
+          <a href=" https://g.co/kgs/6EWcDp" alt="alamat servicemobil.id"
+            > Jl. Patra No.3, RT.3/RW.2, Duri Kepa, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</a
           >
         </div>
-        <a href="https://goo.gl/maps/95x5byzcVpRdh9cT7" alt="alamat servicemobil.id">
+        <a href=" https://g.co/kgs/6EWcDp" alt="alamat servicemobil.id">
           <div class="container-iframe mt-4">
             <iframe
             title="alamat service mobil"
