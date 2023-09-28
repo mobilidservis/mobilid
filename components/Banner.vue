@@ -1,6 +1,6 @@
 <template>
   <div
-    class="top-0 h-full bg-[url(/image/Picsart_23-07-03_20-06-24-128.webp)] bg-center bg-cover bg-no-repeat"
+    class="top-0 h-full bg-[url(/image/servicemobilbanner.png)] bg-center bg-cover bg-no-repeat"
     id="header"
   >
   <div class="bg-black w-full h-full bg-opacity-70">

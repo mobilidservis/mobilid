@@ -58,11 +58,11 @@
       <div class="basis-5/12 flex flex-col order-2 lg:order-3">
         <div class="flex space-x-2">
           <img :src="locationIcon" alt="" srcset="" />
-          <a href=" https://g.co/kgs/6EWcDp" alt="alamat servicemobil.id"
+          <a href="https://maps.app.goo.gl/S7z6Jx1pG6htiTcP7" alt="alamat servicemobil.id"
             > Jl. Patra No.3, RT.3/RW.2, Duri Kepa, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</a
           >
         </div>
-        <a href=" https://g.co/kgs/6EWcDp" alt="alamat servicemobil.id">
+        <a href="https://maps.app.goo.gl/S7z6Jx1pG6htiTcP7" alt="alamat servicemobil.id">
           <div class="container-iframe mt-4">
             <iframe
             title="alamat service mobil"

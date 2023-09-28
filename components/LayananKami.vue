@@ -40,19 +40,31 @@
 const data = reactive({
   layanan: [
     {
-      image: "/image/Picsart_23-07-03_20-06-24-128.webp",
+      image: "/image/mekanik1.png",
       title: "SERVICE BERKALA",
       content:
         "Proses perawatan dan perbaikan rutin kendaraan yang meliputi penggantian pelumas pada mesin untuk menjaga performa mesin.",
     },
     {
-      image: "/image/Picsart_23-07-03_20-13-37-718.webp",
+      image: "/image/mekanik2.png",
       title: "MESIN",
       content:
         "Perawatan dan perbaikan engine sistem meliputi engine electrical diagnosis, mecanical engine serta sistem pelumasan dan pendinginan mesin.",
     },
     {
-      image: "/image/Picsart_23-07-03_20-16-52-834.webp",
+      image: "/image/mekanik3.png",
+      title: "ELECTRICAL",
+      content:
+        "Perbaikan dan perawatan Air Conditioner, electrical wiring system dan electrical component",
+    },
+    {
+      image: "/image/mekanik4.png",
+      title: "ELECTRICAL",
+      content:
+        "Perbaikan dan perawatan Air Conditioner, electrical wiring system dan electrical component",
+    },
+    {
+      image: "/image/mekanik5.png",
       title: "ELECTRICAL",
       content:
         "Perbaikan dan perawatan Air Conditioner, electrical wiring system dan electrical component",
