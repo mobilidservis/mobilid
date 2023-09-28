@@ -18,7 +18,7 @@
             <a alt="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100094504038278&mibextid=ZbWKwL">
               <img :src="fbIcon" class="w-8" alt="" />
             </a>
-            <a  alt="whatsapp" target="_blank" href="https://wa.me/+6285817853206">
+            <a  alt="whatsapp" target="_blank" href="https://wa.me/+6285281246971">
               <img :src="waIcon" class="w-8" alt="" />
             </a>
             <a alt="instagram" target="_blank" href="https://instagram.com/servicemobilid?igshid=MzNlNGNkZWQ4Mg==">

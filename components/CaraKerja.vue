@@ -32,7 +32,7 @@ const works = [
     icon: "/image/phone 1.svg",
     title: "Hubungi Kami",
     content:
-      "Isi keterangan dan permasalahan kendaraan Anda, atau hubungi kami di nomor 085817853206",
+      "Isi keterangan dan permasalahan kendaraan Anda, atau hubungi kami di nomor 085281246971",
   },
   {
     icon: "/image/calendar 1.svg",
