@@ -8,4 +8,4 @@ export const useUserLogin = () => useState<UserLogin>('UserLogin', () => userLog
 
 export const useToggleOpenMenu = () => {
     useOpenMenu().value = !useOpenMenu().value
-  }
+}

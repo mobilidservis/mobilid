@@ -1,4 +1,4 @@
-import { isLogin, storeDataUser } from './store';
+import { isUserLogin, storeDataUser } from './store';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -18,7 +18,7 @@ export const signInUser = async (email: string, password: string) => {
     .then((credentials) => {
       const user = credentials.user;
       storeDataUser(user);
-      isLogin.value = true
+      isUserLogin.value = true
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -49,7 +49,7 @@ export const loginWithGoogle = async () => {
 
 export const onLogoutAction = () => {
   signOut(getAuth()).then(() => {
-      isLogin.value = false
+      isUserLogin.value = false
       userLogin.value = {}
       location.reload();
   })

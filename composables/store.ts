@@ -4,7 +4,7 @@ import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { UserLogin } from '~/model/UserLogin';
 import { getFirstWordFromEmail } from '~/utils/fucntion';
 
-export const isLogin = useStorage('isLogin', false)
+export const isUserLogin = useStorage('isUserLogin', false)
 export const userLogin = useStorage('userLogin', {} as UserLogin)
 
 
@@ -13,7 +13,7 @@ export const storeDataUser = async (user: User) => {
     const data = await getDoc(docRef);
     
     if (data.exists()) {
-      isLogin.value = true
+      isUserLogin.value = true
       const refs = doc(firestoreDb, "user_account", String(data.id));
       getDoc(refs).then((a) => {
         userLogin.value = a.data() as UserLogin;
@@ -35,8 +35,6 @@ export const storeDataUser = async (user: User) => {
       ,
       { merge: true }
     );
-    isLogin.value = true
+    isUserLogin.value = true
     userLogin.value = newUser
-
-
   };
